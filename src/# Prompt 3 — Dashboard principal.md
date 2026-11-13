@@ -29,6 +29,7 @@ O dashboard deve exibir 3 cards principais:
 - Todos os dados devem ser carregados do Neon em tempo real
 - Exibir apenas dados da nutricionista logada
 - Se não houver pacientes sem retorno, exibir a mensagem "Nenhum paciente sem retorno no momento"
+- Quando usuário for "teste@teste.com", exibir um card denominado "Nutricionistas Disponíveis" e uma lista com o nome e login dos  nutricionistas cadastrados
 
 ## Design
 - Seguir o mesmo padrão visual da tela de autenticação
