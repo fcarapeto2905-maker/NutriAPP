@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { authClient } from './lib/auth-client';
 import { AuthPage } from './components/AuthPage';
 import { Dashboard } from './components/Dashboard';
-import { Activity } from 'lucide-react';
+import { FireworksOverlay } from './components/FireworksOverlay';
+import { DancingSalad } from './components/DancingSalad';
 
 export default function App() {
   const [user, setUser] = useState<any>(null);
@@ -28,24 +29,28 @@ export default function App() {
     checkSession();
   }, []);
 
-  // Visual de carregamento elegante para prevenir telas brancas
+  // Visual de carregamento elegante com paleta Azul Escuro, Amarelo e Cinza
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
-        <div className="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-600/20 mb-4 animate-bounce">
-          <Activity className="w-7 h-7" />
-        </div>
-        <div className="flex items-center gap-2 text-slate-600 font-medium text-sm">
-          <div className="w-4 h-4 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
-          <span>Carregando Feriani Nutri...</span>
+      <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-4">
+        <DancingSalad size={110} className="mb-4" />
+        <div className="flex items-center gap-2 text-slate-700 font-semibold text-sm">
+          <div className="w-4 h-4 border-2 border-amber-400 border-t-slate-900 rounded-full animate-spin" />
+          <span>Carregando CARAPETO Nutri&Health System...</span>
         </div>
       </div>
     );
   }
 
-  if (!user) {
-    return <AuthPage onSuccess={(loggedUser) => setUser(loggedUser)} />;
-  }
-
-  return <Dashboard user={user} onLogout={() => setUser(null)} />;
+  return (
+    <>
+      <FireworksOverlay />
+      
+      {!user ? (
+        <AuthPage onSuccess={(loggedUser) => setUser(loggedUser)} />
+      ) : (
+        <Dashboard user={user} onLogout={() => setUser(null)} />
+      )}
+    </>
+  );
 }
