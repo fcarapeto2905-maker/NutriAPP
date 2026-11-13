@@ -3,8 +3,8 @@
 Agora vamos criar o dashboard principal do sistema. Essa é a primeira tela que a nutricionista vê após fazer login.
 
 ## Layout
-- Inserir um bonequinho exibindo músculo forte
-- Cores: Azul escuro, azul, amarelo e cinza
+- Inserir uma imagem de personagem exibindo músculo forte
+- Cores: Branco, azul, amarelo e cinza
 - Menu lateral fixo com as opções: Tela Inicial, Dashboard, Pacientes
 - Área principal com os cards de informação
 
