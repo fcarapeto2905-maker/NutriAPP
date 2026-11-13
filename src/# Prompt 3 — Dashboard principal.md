@@ -7,6 +7,7 @@ Agora vamos criar o dashboard principal do sistema. Essa é a primeira tela que 
 - Cores: Branco, azul, amarelo e cinza
 - Menu lateral fixo com as opções: Tela Inicial, Dashboard, Pacientes
 - Área principal com os cards de informação
+- Quando usuário for "teste@teste.com"
 
 ## Cards de informação
 O dashboard deve exibir 3 cards principais:

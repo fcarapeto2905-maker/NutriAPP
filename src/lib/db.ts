@@ -1,6 +1,7 @@
 import { neon } from '@neondatabase/serverless';
 
-const databaseUrl = import.meta.env.VITE_DATABASE_URL || '';
+const fallbackDbUrl = 'postgresql://neondb_owner:npg_rBfIblhOGR20@ep-floral-lake-b6rpjjed-pooler.c-2.sa-east-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require';
+const databaseUrl = import.meta.env.VITE_DATABASE_URL || fallbackDbUrl;
 
 export const sql = databaseUrl ? neon(databaseUrl) : null;
 
